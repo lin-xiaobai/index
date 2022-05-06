@@ -1,0 +1,2 @@
+# index
+shop_index
