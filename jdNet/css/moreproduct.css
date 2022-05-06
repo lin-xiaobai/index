@@ -1,0 +1,54 @@
+body{
+	background: #f5f5f5;
+}
+.price{
+	width: 100%;
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+	height: 300px;
+	/*background: red;*/
+}
+.product{
+	background: #fff;
+}
+.product>.product_box{
+	min-height: 300px;
+}
+.product>.product_box>.product_box_tit{
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.product>.product_box>.product_box_con{
+
+}
+.product>.product_box>.product_box_con>ul{
+	width: 100%;
+	padding: 10px 0;
+}
+.product>.product_box>.product_box_con>ul>li{
+	width: 33.333%;
+	float: left;
+	text-align: center;
+}
+.product>.product_box>.product_box_con>ul>li>a{
+	width: 100%;
+	display: block;
+}
+.product>.product_box>.product_box_con>ul>li>a>img{
+	width: 66%;
+	display: block;
+	margin: 0 auto;
+}
+.product>.product_box>.product_box_con>ul>li>p:first-of-type{
+	color: #d8505c;
+	padding-top: 5px;
+}
+.product>.product_box>.product_box_con>ul>li>p:last-of-type{
+	/*加删除线*/
+	text-decoration: line-through;
+	color: #666;
+	padding-top: 5px;
+}
+

@@ -1,0 +1,10 @@
+<?php
+//数据库主机地址
+define("DB_HOST","49.232.152.52");
+//连接数据库使用的用户名
+define("DB_USER","qsm");
+//连接数据库使用的密码
+define("DB_PWD","qsm123");
+//数据库的名称
+define("DB_NAME","goodsdata");
+?>

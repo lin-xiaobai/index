@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>更多特价产品</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/moreproduct.css">
+</head>
+<body>
+	<div class="price">
+		<main class="product">
+			<section class="product_box">
+				<div class="product_box_tit"><h3>天天特价</h3></div>
+				<div class="product_box_con">
+					<ul class="clearfix" id="productList">
+						<!-- 此部分的特价产品从数据库里获取 -->
+					</ul>
+				</div>
+			</section>
+			<!--  -->
+			<script src="js/jquery-1.12.2.js"></script>
+			<!--引入jQuery-->
+			<script>
+
+			    /**
+			     *  功能是页面加载完毕的时候就把后台提供的所有天天特价的信息以列表的形式展示在页面上
+			     *
+			     *      使用ajax异步请求服务器提供数据
+			     *
+			     *      根据数据把数据变成html结构，插入到指定的ul里面
+			     *
+			     */
+
+			    $(function () {
+			        //已经是页面加载完毕了-- 把数据填充到ul里面
+			        $.ajax({
+			            url: "http://49.232.152.52/qsm/php/getGoodsAll.php",
+			            method: "post",
+			            //res 就是服务端返回的数据
+			            success: function (res) {
+			                var data = JSON.parse(res);
+			                console.log(data);
+			                //根据后台返回的数据格式，生成列表项li，追加到无序列表ul里面
+			                var str="";
+			                for(var i=0;i<data.length;i++){
+			                    str+="<li>";
+			                    str+="<a href='#'><img src='"+data[i].pic+"' alt=''></a>";
+			                    str+="<p>&yen;"+data[i].nowprice+"</p>";
+			                    str+="<p>&yen;"+data[i].oldprice+"</p>";
+			                    str+="</li>";
+			                }
+			                //把字符串变成ul的子元素
+			                $("#productList").html(str);
+			            }
+			        });
+
+			    });
+
+
+			</script>
+		</main>
+	</div>
+</body>
+</html>
